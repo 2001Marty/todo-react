@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import { TextField} from '@mui/material'
 
 const useInputValue = (initValue) =>{
     const [value,setValue] = useState(initValue);
@@ -18,7 +19,7 @@ export default ({onSubmit}) => {
             onSubmit(text.value);
             restValue();
         }}>   
-            <input{...text}/>
+            <TextField InputLabelProps={{style:{color: '#3f50b5'}}} autoComplete='off' label="Zadej úkol" variant="standard" sx={{ width: 250}}{...text}/>
         </form>
     );
 }
